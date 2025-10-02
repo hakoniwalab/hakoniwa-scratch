@@ -77,7 +77,7 @@
       const Req = this.HakoPdu.SystemControlRequest;
       const req = new Req();
       req.opcode = this.HakoPdu.SystemControlOpCode[opcode];
-      const res = await this._sysClient.call(req);
+      const res = await this._sysClient.call(req, -1, 1);
       return res?.message || 'RPC failed';
     }
 
