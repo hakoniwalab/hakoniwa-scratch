@@ -152,7 +152,7 @@
         const req = new HP.SystemControlRequest();
         req.opcode = HP.SystemControlOpCode[opcode];
         return req;
-      }, -1, 1);
+      });
     }
 
     activate()  { return this._call('ACTIVATE'); }
