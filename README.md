@@ -21,7 +21,7 @@ npm start
 例: `hello-extension.js` を作成して以下で配信:
 
 ```bash
-npx http-server . -p 8080 --cors -c-1
+npx http-server . -p 8090 --cors -c-1
 ```
 
 ### 3. エディタに読み込ませる
@@ -29,7 +29,7 @@ npx http-server . -p 8080 --cors -c-1
 URLパラメータで拡張を指定:
 
 ```
-http://localhost:8601/editor.html?extension=http://127.0.0.1:8080/hello-extension.js
+http://localhost:8601/editor.html?extension=http://127.0.0.1:8090/hello-extension.js
 ```
 
 → ブロックパレットに `Hello Block` カテゴリが出れば成功。

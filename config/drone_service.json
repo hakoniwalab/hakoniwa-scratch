@@ -1,0 +1,137 @@
+{
+    "pduMetaDataSize": 24,
+    "pdu_config_path": "examples/rpc/hako/pdu_config.json",
+    "services": [
+        {
+            "name": "Service/SystemControl",
+            "type": "hako_srv_msgs/SystemControl",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/DroneSetReady",
+            "type": "drone_srv_msgs/DroneSetReady",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/DroneTakeOff",
+            "type": "drone_srv_msgs/DroneTakeOff",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/DroneGoTo",
+            "type": "drone_srv_msgs/DroneGoTo",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/DroneGetState",
+            "type": "drone_srv_msgs/DroneGetState",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/DroneLand",
+            "type": "drone_srv_msgs/DroneLand",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/CameraCaptureImage",
+            "type": "drone_srv_msgs/CameraCaptureImage",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 1002992
+                }
+            }
+        },
+        {
+            "name": "DroneService/CameraSetTilt",
+            "type": "drone_srv_msgs/CameraSetTilt",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        },
+        {
+            "name": "DroneService/LiDARScan",
+            "type": "drone_srv_msgs/LiDARScan",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 177424
+                }
+            }
+        },
+        {
+            "name": "DroneService/MagnetGrab",
+            "type": "drone_srv_msgs/MagnetGrab",
+            "maxClients": 1,
+            "pduSize": {
+                "server": {
+                    "heapSize": 0
+                },
+                "client": {
+                    "heapSize": 0
+                }
+            }
+        }
+    ],
+    "nodes": []
+}
