@@ -1,10 +1,14 @@
 // hakoniwa-client/loader.js
 // 責務: 外部モジュールの動的fetch（URL取得・ロード）
 
+export const FETCH_PORT = 8090;
+export const FETCH_URI = `http://127.0.0.1:${FETCH_PORT}`;
+
 export class HakoniwaModuleLoader {
   constructor() {
     this._loadedPduModules = null;
     this._loadedHakoniwaModules = null;
+    this._baseUrl = null;
   }
 
   /**
@@ -30,17 +34,21 @@ export class HakoniwaModuleLoader {
   }
 
   /**
-   * URLを優先順位付きで解決
-   * 1. クエリパラメータ
-   * 2. LocalStorage
-   * 3. デフォルト値
+   * ベースURLを取得（優先順位: クエリパラメータ → localStorage → デフォルト）
    */
-  static resolveUrl(queryParam, localStorageKey, defaultUrl) {
-    return (
-      this.safeGetQueryParam(queryParam) ||
-      this.safeLocalStorageGet(localStorageKey) ||
-      defaultUrl
+  getBaseUrl() {
+    if (this._baseUrl) {
+      return this._baseUrl;
+    }
+
+    this._baseUrl = (
+      HakoniwaModuleLoader.safeGetQueryParam('hakobase') ||
+      HakoniwaModuleLoader.safeLocalStorageGet('hako_base_url') ||
+      FETCH_URI
     );
+
+    console.log('[HakoniwaLoader] Base URL:', this._baseUrl);
+    return this._baseUrl;
   }
 
   /**
@@ -52,17 +60,9 @@ export class HakoniwaModuleLoader {
       return this._loadedPduModules;
     }
 
-    const constUrl = HakoniwaModuleLoader.resolveUrl(
-      'hako',
-      'hako_url',
-      'http://127.0.0.1:8090/src/const.js'
-    );
-
-    const hakoPduUrl = HakoniwaModuleLoader.resolveUrl(
-      'hakopdu',
-      'hakopdu_url',
-      'http://127.0.0.1:8090/hakoniwa-pdu-javascript/src/index.js'
-    );
+    const baseUrl = this.getBaseUrl();
+    const constUrl = `${baseUrl}/src/const.js`;
+    const hakoPduUrl = `${baseUrl}/hakoniwa-pdu-javascript/src/index.js`;
 
     console.log('[HakoniwaLoader] Loading PDU modules:', { constUrl, hakoPduUrl });
 
@@ -84,11 +84,7 @@ export class HakoniwaModuleLoader {
       return this._loadedHakoniwaModules;
     }
 
-    const baseUrl = HakoniwaModuleLoader.resolveUrl(
-      'hakobase',
-      'hako_base_url',
-      'http://127.0.0.1:8090'
-    );
+    const baseUrl = this.getBaseUrl();
 
     console.log('[HakoniwaLoader] Loading Hakoniwa modules from:', baseUrl);
 
@@ -123,5 +119,6 @@ export class HakoniwaModuleLoader {
   reset() {
     this._loadedPduModules = null;
     this._loadedHakoniwaModules = null;
+    this._baseUrl = null;
   }
 }

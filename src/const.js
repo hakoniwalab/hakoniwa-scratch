@@ -2,8 +2,8 @@
 export const DEFAULT_PDU_CONFIG_URL     = new URL('./config/pdu_config.json', import.meta.url).toString();
 export const DEFAULT_SERVICE_CONFIG_URL = new URL('./config/drone_service.json', import.meta.url).toString();
 
-export const PORT = 8080;
-export const URI  = `ws://localhost:${PORT}`;
+export const WS_PORT = 8080;
+export const URI  = `ws://localhost:${WS_PORT}`;
 
 // SystemControl サービス用
 export const SYSTEM_CONTROL_SERVICE_NAME = 'Service/SystemControl';
