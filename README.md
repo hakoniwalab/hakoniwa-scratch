@@ -52,8 +52,12 @@ http://localhost:8601/editor.html?extension=http://127.0.0.1:8090/extension.js
 
 ### 4. 箱庭シミュレーターを起動
 
-別ターミナルで箱庭システムを起動してください。
-（箱庭システムの起動方法は [hakoniwa](https://github.com/toppers/hakoniwa) を参照）
+別ターミナルで箱庭ドローンシミュレータのRPCサーバーを起動してください。
+手順は、TODOですが、参考情報を以下に示します。
+
+参考情報：
+- https://github.com/toppers/hakoniwa-drone-core
+- https://qiita.com/kanetugu2018/items/60c6fb3b906a430097fc
 
 ---
 
@@ -248,4 +252,4 @@ MIT
 
 - [TurboWarp](https://turbowarp.org/)
 - [TurboWarp 拡張開発ドキュメント](https://docs.turbowarp.org/development/extensions/introduction)
-- [箱庭（Hakoniwa）](https://github.com/toppers/hakoniwa)
+- [箱庭ラボ（HakoniwaLab）](https://hakoniwa-lab.net/)
