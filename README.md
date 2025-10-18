@@ -14,7 +14,9 @@ Scratch/TurboWarp 向けの箱庭システム連携拡張。
 
 ## Getting Started
 
-### 1. ローカルで TurboWarp Editor を起動
+### 1. ローカルで TurboWarp Editor を起動(任意)
+
+ローカルサーバーで起動する場合は、以下の手順でサーバーを立てます。
 
 `scratch-gui` を clone & 起動:
 
@@ -27,7 +29,7 @@ npm start
 
 → [http://localhost:8601/editor.html](http://localhost:8601/editor.html) が開発用エディタ。
 
-### 2. 箱庭拡張をローカルHTTPサーバーで配信
+### 2. 箱庭拡張をローカルHTTPサーバーで配信（必須）
 
 このリポジトリをHTTPサーバーで配信:
 
@@ -38,13 +40,38 @@ npx http-server . -p 8090 --cors -c-1
 - `--cors`: CORS許可（TurboWarpからのアクセスに必要）
 - `-c-1`: キャッシュ無効化（開発中の変更を即座に反映）
 
-### 3. エディタに拡張を読み込ませる
-
-URLパラメータで拡張を指定:
+### 3.  hakoniwa-drone-core のRPCサーバーを起動（必須）
 
 ```
-http://localhost:8601/editor.html?extension=http://127.0.0.1:8090/extension.js
+ bash launch.bash config/launcher/drone-api-ubuntu.launch.json
 ```
+
+ インストール方法は以下を参照ください。
+
+- https://qiita.com/kanetugu2018/items/60c6fb3b906a430097fc
+
+### 4. エディタに拡張を読み込ませる
+
+ブラウザを起動し、以下を指定します。
+
+ローカルサーバーを使う場合:
+```
+http://localhost:8601/editor
+```
+
+公式サーバーを使う場合:
+```
+https://turbowarp.org/editor
+```
+
+ 成功するとこうなります。
+
+![alt text](docs/images/turbowarp-top.png)
+
+「ファイル」→「コンピュータから読み込む」を選択し、｀example/base.sb3｀を開きます。
+
+![alt text](docs/images/turbowarp-load.png)
+
 
 → ブロックパレットに以下が出れば成功:
 - **Hakoniwa Control** カテゴリ（システム制御）
