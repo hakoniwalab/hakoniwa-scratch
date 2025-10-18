@@ -77,7 +77,7 @@ https://turbowarp.org/editor
 - **Hakoniwa Control** カテゴリ（システム制御）
 - **Hakoniwa Drone** カテゴリ（ドローン操作）
 
-![alt text](image.png)
+![alt text](docs/images/hakoniwa-blocks.png)
 
 
 # デモ
