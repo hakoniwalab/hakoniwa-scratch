@@ -77,14 +77,13 @@ https://turbowarp.org/editor
 - **Hakoniwa Control** カテゴリ（システム制御）
 - **Hakoniwa Drone** カテゴリ（ドローン操作）
 
-### 4. 箱庭シミュレーターを起動
+![alt text](image.png)
 
-別ターミナルで箱庭ドローンシミュレータのRPCサーバーを起動してください。
-手順は、TODOですが、参考情報を以下に示します。
 
-参考情報：
-- https://github.com/toppers/hakoniwa-drone-core
-- https://qiita.com/kanetugu2018/items/60c6fb3b906a430097fc
+# デモ
+
+[![動画を再生](https://img.youtube.com/vi/7mMUtSfE6-o/0.jpg)](https://www.youtube.com/watch?v=7mMUtSfE6-o)
+
 
 ---
 
